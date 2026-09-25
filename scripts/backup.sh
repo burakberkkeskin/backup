@@ -103,7 +103,7 @@ Examples:
   $(basename "$0") --source /srv/immich --tag immich \\
       --pre-job "/opt/backup/scripts/pre-jobs/stop-container.sh immich_server" \\
       --pre-job "/opt/backup/scripts/pre-jobs/immich-postgresql-dump.sh" \\
-      --post-job "/opt/backup/scripts/post-job/start-container.sh immich_server"
+      --post-job "/opt/backup/scripts/post-jobs/start-container.sh immich_server"
 EOF
 }
 

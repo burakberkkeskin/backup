@@ -54,7 +54,7 @@ flowchart TD
 │   │   ├── log.sh             # Standard ISO-8601 logging
 │   │   └── ntfy-backup-notifications.sh # Sanitized ntfy notification module
 │   ├── pre-jobs/              # Database dump and pre-backup hooks
-│   └── post-job/              # Service restart hooks
+│   └── post-jobs/             # Service restart hooks
 └── recovery-codes/            # Standalone recovery credentials backup
 ```
 
@@ -82,7 +82,7 @@ All sensitive credentials reside **outside** this git repository:
 /opt/backup/scripts/backup.sh /srv/immich immich \
   --pre-job "/opt/backup/scripts/pre-jobs/stop-container.sh immich_server" \
   --pre-job "/opt/backup/scripts/pre-jobs/immich-postgresql-dump.sh" \
-  --post-job "/opt/backup/scripts/post-job/start-container.sh immich_server"
+  --post-job "/opt/backup/scripts/post-jobs/start-container.sh immich_server"
 ```
 
 ### B. Run Repository Maintenance (Retention & Prune)
