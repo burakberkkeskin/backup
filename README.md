@@ -81,7 +81,7 @@ All sensitive credentials reside **outside** this git repository:
 # Backup with container pre/post hooks (e.g. database consistency)
 /opt/backup/scripts/backup.sh /srv/immich immich \
   --pre-job "/opt/backup/scripts/pre-jobs/stop-container.sh immich_server" \
-  --pre-job "/opt/backup/scripts/pre-jobs/immich-postgresql-dump.sh" \
+  --pre-job "/opt/backup/scripts/pre-jobs/postgresql-dump.sh immich_postgres /srv/immich/library/backups/immich-database.sql.gz" \
   --post-job "/opt/backup/scripts/post-jobs/start-container.sh immich_server"
 ```
 
